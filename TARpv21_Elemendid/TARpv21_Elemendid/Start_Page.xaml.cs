@@ -26,15 +26,27 @@ namespace TARpv21_Elemendid
                 BackgroundColor = Color.AliceBlue,
                 TextColor = Color.Black
             };
+            Button Boxbtn = new Button
+            {
+                Text = "BoxView page",
+                BackgroundColor = Color.AliceBlue,
+                TextColor = Color.Black
+            };
             StackLayout st = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
                 BackgroundColor = Color.Beige,
-                Children = { Textbtn, Timerbtn }
+                Children = { Textbtn, Timerbtn, Boxbtn }
             };
             Content = st;
+            Boxbtn.Clicked += Boxbtn_Clicked;
             Textbtn.Clicked += Textbtn_Clicked;
             Timerbtn.Clicked += Timerbtn_Clicked;
+        }
+
+        private async void Boxbtn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Box_Page());
         }
 
         private async void Timerbtn_Clicked(object sender, EventArgs e)
