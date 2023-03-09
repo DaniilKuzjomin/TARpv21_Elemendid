@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TARpv21_Elemendid.Valgusfoor">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Valgusfoor" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Frame x:Name="punane" CornerRadius="90" Margin="100,0" BackgroundColor="Red" VerticalOptions="FillAndExpand">
+                <Label Text="Punane" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Frame>
+            <Frame x:Name="kollane" CornerRadius="90" Margin="100,0" BackgroundColor="Yellow" VerticalOptions="FillAndExpand">
+                <Label Text="Kollane" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Frame>
+            <Frame x:Name="roheline" CornerRadius="90" Margin="100,0" BackgroundColor="Green" VerticalOptions="FillAndExpand">
+                <Label Text="Roheline" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="Sisse"
+                        Text="Sisse" 
+                        Clicked="Sisse_Clicked" 
+                        HorizontalOptions="StartAndExpand" />
+                <Button x:Name="Välja"
+                        Text="Välja"
+                        Clicked="Valja_Clicked" 
+                        HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
