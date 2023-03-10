@@ -7,14 +7,14 @@
             <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
                 <Label Text="Valgusfoor" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
             </Frame>
-            <Frame x:Name="punane" CornerRadius="90" Margin="100,0" BackgroundColor="Red" VerticalOptions="FillAndExpand">
-                <Label Text="Punane" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Frame x:Name="punane" CornerRadius="90" Margin="120,0" BackgroundColor="Red" VerticalOptions="FillAndExpand">
+                <Label Text="Punane" x:Name="lbl1Click" HorizontalOptions="Center" VerticalOptions="Center" />
             </Frame>
-            <Frame x:Name="kollane" CornerRadius="90" Margin="100,0" BackgroundColor="Yellow" VerticalOptions="FillAndExpand">
-                <Label Text="Kollane" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Frame x:Name="kollane" CornerRadius="90" Margin="120,0" BackgroundColor="Yellow" VerticalOptions="FillAndExpand">
+                <Label Text="Kollane" x:Name="lbl2Click" HorizontalOptions="Center" VerticalOptions="Center" />
             </Frame>
-            <Frame x:Name="roheline" CornerRadius="90" Margin="100,0" BackgroundColor="Green" VerticalOptions="FillAndExpand">
-                <Label Text="Roheline" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Frame x:Name="roheline" CornerRadius="90" Margin="120,0" BackgroundColor="Green" VerticalOptions="FillAndExpand">
+                <Label Text="Roheline" x:Name="lbl3Click" HorizontalOptions="Center" VerticalOptions="Center"/>
             </Frame>
             <StackLayout Orientation="Horizontal">
                 <Button x:Name="Sisse"
@@ -25,6 +25,16 @@
                         Text="Välja"
                         Clicked="Valja_Clicked" 
                         HorizontalOptions="EndAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="Night"
+                        Text="Sisse öö reziim"
+                        Clicked="NReziim_Clicked"
+                        HorizontalOptions="EndAndExpand"/>
+                <Button x:Name="Night2"
+                        Text="Välja öö reziim"
+                        Clicked="VNReziim_Clicked"
+                        HorizontalOptions="EndAndExpand"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

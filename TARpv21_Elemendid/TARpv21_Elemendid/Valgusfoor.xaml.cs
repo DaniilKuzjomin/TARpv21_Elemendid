@@ -15,9 +15,13 @@ namespace TARpv21_Elemendid
     public partial class Valgusfoor : ContentPage
     {
         bool sisse = false;
+        bool night = false;
         public Valgusfoor()
         {
             InitializeComponent();
+            lbl1ClickFunc();
+            lbl2ClickFunc();
+            lbl3ClickFunc();
         }
 
         private void Valja_Clicked(object sender, EventArgs e)
@@ -26,16 +30,100 @@ namespace TARpv21_Elemendid
             punane.BackgroundColor = Color.Gray;
             kollane.BackgroundColor = Color.Gray;
             roheline.BackgroundColor = Color.Gray;
+            lbl1Click.Text = "Punane";
+            lbl1Click.Text = "Kollane";
+            lbl1Click.Text = "Roheline";
 
+        }
+
+        private async void NReziim_Clicked(object sender, EventArgs e)
+        {
+            night = true;
+            sisse = false;
+
+            if (night)
+            {
+                while (night)
+                {
+                    punane.BackgroundColor = Color.Gray;
+                    roheline.BackgroundColor = Color.Gray;
+
+
+                    kollane.BackgroundColor = Color.Yellow;
+                    await Task.Delay(700);
+                    if (!night) break;
+                    kollane.BackgroundColor = Color.Gray;
+                    await Task.Delay(700);
+                    if (!night) break;
+                    kollane.BackgroundColor = Color.Yellow;
+                    await Task.Delay(700);
+                    if (!night) break;
+                    kollane.BackgroundColor = Color.Gray;
+                    await Task.Delay(700);
+                    if (!night) break;
+                    kollane.BackgroundColor = Color.Yellow;
+                    await Task.Delay(700);
+                    if (!night) break;
+                    kollane.BackgroundColor = Color.Gray;
+                }
+            }
+            
+        }
+
+        private async void VNReziim_Clicked(object sender, EventArgs e)
+        {
+            night = false;
+            punane.BackgroundColor = Color.Gray;
+            kollane.BackgroundColor = Color.Gray;
+            roheline.BackgroundColor = Color.Gray;
+
+        }
+
+        void lbl1ClickFunc()
+        {
+            lbl1Click.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+
+                    lbl1Click.Text = "Stopp!";
+
+                })
+            });
+        }
+
+        void lbl2ClickFunc()
+        {
+            lbl2Click.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+
+                    lbl2Click.Text = "Oota!";
+
+                })
+            });
+        }
+
+        void lbl3ClickFunc()
+        {
+            lbl3Click.GestureRecognizers.Add(new TapGestureRecognizer()
+            {
+                Command = new Command(() =>
+                {
+
+                    lbl3Click.Text = "Mine!";
+
+                })
+            });
         }
 
 
 
         private async void Sisse_Clicked(object sender, EventArgs e)
         {
-            
-
             sisse = true;
+            night = false;
 
             if (sisse)
             {
@@ -93,6 +181,8 @@ namespace TARpv21_Elemendid
                     if (!sisse) break;
                 }
             }
+
+            
 
         }
 
