@@ -12,63 +12,36 @@ namespace TARpv21_Elemendid
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Start_Page : ContentPage
     {
+        List<ContentPage> contentPages = new List<ContentPage>() { new Text_Page(), new Timer_Page(), new Box_Page(), new Valgusfoor(), new StepperSlider_Page(), new RGB_Slider_Page() };
+        List<string> tekstid = new List<string> { "Text Page", "Timer Page", "Box Page", "Valgusfoor Page", "StepperSlider Page", "RGB Slider Page" };
+
         public Start_Page()
         {
-            Button Textbtn = new Button
-            {
-                Text = "Text Page",
-                BackgroundColor = Color.AliceBlue,
-                TextColor = Color.Black
-            };
-            Button Timerbtn = new Button
-            {
-                Text = "Timer Page",
-                BackgroundColor = Color.AliceBlue,
-                TextColor = Color.Black
-            };
-            Button Boxbtn = new Button
-            {
-                Text = "BoxView page",
-                BackgroundColor = Color.AliceBlue,
-                TextColor = Color.Black
-            };
-            Button Valgusfoorbtn = new Button
-            {
-                Text = "Valgusfoor page",
-                BackgroundColor = Color.AliceBlue,
-                TextColor = Color.Black
-            };
+            
             StackLayout st = new StackLayout
             {
                 Orientation = StackOrientation.Vertical,
                 BackgroundColor = Color.Beige,
-                Children = { Textbtn, Timerbtn, Boxbtn, Valgusfoorbtn }
             };
+            for (int i = 0; i < contentPages.Count; i++)
+            {
+                Button button = new Button
+                {
+                    Text = tekstid[i],
+                    TabIndex = i,
+                    BackgroundColor = Color.LightCyan,
+                    TextColor = Color.Black
+                };
+                button.Clicked += Navig_funktsion;
+                st.Children.Add(button);
+            }
             Content = st;
-            Boxbtn.Clicked += Boxbtn_Clicked;
-            Textbtn.Clicked += Textbtn_Clicked;
-            Timerbtn.Clicked += Timerbtn_Clicked;
-            Valgusfoorbtn.Clicked += Valgusfoorbtn_Clicked;
         }
 
-        private async void Valgusfoorbtn_Clicked(object sender, EventArgs e)
+        private async void Navig_funktsion(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Valgusfoor());
-        }
-
-        private async void Boxbtn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Box_Page());
-        }
-
-        private async void Timerbtn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Timer_Page());
-        }
-
-        private async void Textbtn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Text_Page());
+            Button b = (Button)sender; /// = sender as Button;
+            await Navigation.PushAsync(contentPages[b.TabIndex]);
         }
     }
 }

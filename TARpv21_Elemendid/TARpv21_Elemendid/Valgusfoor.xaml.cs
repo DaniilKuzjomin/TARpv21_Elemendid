@@ -19,9 +19,11 @@ namespace TARpv21_Elemendid
         public Valgusfoor()
         {
             InitializeComponent();
+
             lbl1ClickFunc();
             lbl2ClickFunc();
             lbl3ClickFunc();
+
         }
 
         private void Valja_Clicked(object sender, EventArgs e)
@@ -31,8 +33,8 @@ namespace TARpv21_Elemendid
             kollane.BackgroundColor = Color.Gray;
             roheline.BackgroundColor = Color.Gray;
             lbl1Click.Text = "Punane";
-            lbl1Click.Text = "Kollane";
-            lbl1Click.Text = "Roheline";
+            lbl2Click.Text = "Kollane";
+            lbl3Click.Text = "Roheline";
 
         }
 
@@ -127,8 +129,10 @@ namespace TARpv21_Elemendid
 
             if (sisse)
             {
+
                 while (sisse)
                 {
+
                     kollane.BackgroundColor = Color.Gray;
                     punane.BackgroundColor = Color.Gray;
                     roheline.BackgroundColor = Color.Gray;
